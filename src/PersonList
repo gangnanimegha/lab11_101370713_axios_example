@@ -1,0 +1,60 @@
+import React, { Component } from 'react';
+
+class PersonList extends Component {
+  // Define state default values
+  state = {
+    persons: [
+      {
+        name: 'John Doe',
+        gender: 'Male',
+        timezone: 'UTC',
+        address: '123 Main St, Cityville',
+        email: 'john.doe@example.com',
+        birthdate: '1990-01-01',
+        age: 32,
+        registerDate: '2023-01-01',
+        phone: '+1234567890',
+        // Add a photo URL or require it using import
+        photo: 'https://example.com/john_doe_photo.jpg',
+      },
+      {
+        name: 'Megha Gangnani',
+        gender: 'FeMale',
+        timezone: 'UTC',
+        address: '123 Main St, Cityville',
+        email: 'meghagangnani@example.com',
+        birthdate: '2001-07-12',
+        age: 32,
+        registerDate: '2023-01-01',
+        phone: '+1234567890',
+        // Add a photo URL or require it using import
+        photo: 'https://example.com/john_doe_photo.jpg',
+      }
+      // Repeat the structure for additional profiles
+    ],
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>Person List</h1>
+        {this.state.persons.map((person, index) => (
+          <div key={index} style={{ backgroundColor: '#f0f0f0', padding: '10px', marginBottom: '10px' }}>
+            <img src={person.photo} alt={person.name} style={{ maxWidth: '100px', maxHeight: '100px' }} />
+            <p>Username: {person.name}</p>
+            <p>Gender: {person.gender}</p>
+            <p>Timezone: {person.timezone}</p>
+            <p>Address: {person.address}</p>
+            <p>Email: {person.email}</p>
+            <p>Birthdate: {person.birthdate}</p>
+            <p>Age: {person.age}</p>
+            <p>Register Date: {person.registerDate}</p>
+            <p>Phone: {person.phone}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
+}
+
+export default PersonList;
